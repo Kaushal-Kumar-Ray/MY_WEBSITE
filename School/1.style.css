@@ -1,0 +1,104 @@
+img{
+  height: 100%;
+
+width: 100%;}
+
+
+html{
+  font-size: 62.5%;
+}
+
+
+
+.topnav {
+    background-color: #333;
+    overflow: hidden;
+  }
+  
+  /* Style the links inside the navigation bar */
+.topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 1.4rem 1.6rem;
+    text-decoration: none;
+    font-size: 1.7rem;
+  }
+  
+  /* Change the color of links on hover */
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  /* Add a color to the active/current link */
+.topnav a.active {
+    background-color: #00b7ff;
+    color: white;
+  }
+  body{
+    
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    padding-bottom: 100rem;
+    
+    
+  }
+  img{
+    height: 17rem;
+    width: 15rem;
+    margin-bottom: 3rem;
+    margin-left: 1rem;
+   
+  }
+  h1{
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    appearance: above;
+    font-size: 7rem;
+    margin-top: -13rem;
+    margin-bottom: 3rem;
+    color: #00b7ff;
+    margin-left: 1rem;
+  }
+  
+  .maindiv{
+    width: 70%;
+    height: 40rem;
+    position: absolute;
+    left: 50%;
+    top: 22%;
+    transform: translate(-50%, -50%);
+    background-image: url("slide1.html.jpg");
+    background-size: 100% 100% ; 
+    box-shadow: .1rem .2rem 1rem .5rem blue;
+    animation: slider 20s infinite linear;
+}
+@keyframes slider {
+    0%{background-image: url("slide1.html.jpg"); }
+    20%{background-image: url("slide2.html.jpg"); }
+    40%{background-image: url("slide3.html.jpg"); }
+    60%{background-image: url("slide4.html.jpg"); }
+    80%{background-image: url("slide5.html.jpg"); }  
+    
+}
+@media(max-width:988px){
+  html{
+    font-size: 55%;
+  }
+}
+@media(max-width:668px){
+  html{
+    font-size: 45%;
+  }
+}
+
+
+
+
+
+
+
+
+  

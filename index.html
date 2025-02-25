@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KR.Solutions</title>
+    <link rel="icon" type="image/x-icon" href="Images/icon.png">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/3dcba19dc6.js" crossorigin="anonymous"></script>
+    <!-- Add Google Fonts for modern typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="Images/logo.png" class="icon">
+                <ul id="sidemenu">
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="Updates/updates.html">Updates</a></li>
+                    <li><a href="Music/music.html">Music</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="Gallery/Gallery.html">Personal Gallery</a></li>
+                    <i class="fas fa-times" onclick="closemenu()"></i>
+                </ul>
+                <i class="fas fa-bars" onclick="openmenu()"></i>
+            </nav>
+            <div class="header-text">
+                <p></p>
+                <h1>Hi, I'm <br><span>Kaushal</span></h1>
+                <!-- Add a futuristic effect on the text -->
+                <p class="subtitle">Innovative Solutions for a Better Tomorrow</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add a smooth scroll effect -->
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+
+<!--About Section-->   
+<div id="about">
+    <div class="container">
+        <div class="row">
+            <div class="about-col-1">
+                <img src="Images/user.png">
+            </div>
+            <div class="about-col-2">
+                <h1 class="sub-title">About Me</h1>
+                <p>Hello, Everyone I am Kaushal Ray form Barahakshetra-6, Sunsari-Nepal. 
+                    I am currently about to complete my +2 form Vishwa Adarsha Secondary School.
+                    I want to present myself as a web developer, programmer and a designer.
+                    Hope you found this website useful. 
+
+                </p>
+                <div class="tab-titles">
+                    <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                    <p class="tab-links" onclick="opentab('interest')">Interest</p>
+                    <p class="tab-links" onclick="opentab('hobbies')">Hobbies</p>
+                </div>
+                <!--Skills-->  
+                <div class="tab-contents active-tab" id="skills">
+                    <ul>
+                        <li><span>Programming</span><br>C-language</li>
+                        <li><span>Web Development</span><br>Designing Web</li>
+                        <li><span>Photoshop</span><br>PNG and JPEG skills</li>
+                    </ul>
+                </div>
+                <!--Interest-->
+                <div class="tab-contents" id="interest">
+                    <ul>
+                        <li><span>Web Series</span><br>Like to watch webseries</li>
+                        <li><span>Web</span><br>Codding web pages</li>
+                        <li><span>Solutions</span><br>Solving mathematical problem</li>
+                    </ul>
+                </div>
+                <!--Hobbies-->
+                <div class="tab-contents" id="hobbies">
+                    <ul>
+                        <li><span>Cyceling</span><br>Riding for long distance</li>
+                        <li><span>Songs</span><br>Like to listen indian song</li>
+                        <li><span>Movies</span><br>Both hollywood and bollywood</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!------My skills-->
+<div id="services">
+    <div class="container">
+        <h1 class="sub-title">My Skills</h1>
+        <div class="services-list">
+        <div>
+            <i class="fa-sharp fa-solid fa-code"></i>
+           <h2>Web design</h2>
+           <p>Know to basic web scripting languages Like
+            HTML, CSS, JavaScript, and PHP.
+           </p>
+             <a href="https://en.wikipedia.org/wiki/Web_design">Learn more</a>
+          </div>
+          <div>
+            <i class="fa-solid fa-paperclip"></i>
+            <h2>Programming</h2>
+            <p>Good knowledge in C-programming with basic OOP 
+                based problems and solutions.
+            </p>
+              <a href="https://en.wikipedia.org/wiki/Computer_programming">Learn more</a>
+           </div>
+           <div>
+            <i class="fa-regular fa-images"></i>
+            <h2>Adobe Photoshop</h2>
+            <p>Complete knowledge of Adove Photoshop, and some 
+                dynamic designes are made by me.
+            </p>
+              <a href="https://en.wikipedia.org/wiki/Adobe_Photoshop">Learn more</a>
+           </div>
+        </div>
+    </div>
+</div>
+<!------My work------>
+<div id="gallery">
+    <div class="container">
+        <h1 class="sub-title">My Work</h1>
+        <div class="work-list">
+            <div class="work">
+                <img src="Images/work-1.jpg" alt="Quiz Competition">
+                <div class="layer">
+                    <h3>Quiz Competition</h3>
+                    <p>A website in which questions are asked and there are four options.
+                        And one will be the answer.</p>
+                    <a href="Quiz/Quiz.html" class="project-link"><i class="fa-solid fa-link"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="Images/work-2.jpg" alt="Modern Calculator">
+                <div class="layer">
+                    <h3>Modern Calculator</h3>
+                    <p>A simple project of making a calculator that can perform basic arithmetic operations.</p>
+                    <a href="Project/project.html" class="project-link"><i class="fa-solid fa-link"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="Images/work-3.jpg" alt="Adobe Photoshop">
+                <div class="layer">
+                    <h3>Adobe Photoshop</h3>
+                    <p>A dynamic and best design of lab sheet prepared from Photoshop using different tools.</p>
+                    <a href="https://drive.google.com/drive/folders/1S094lVIqZL4iEM4kg2KMYnQriABlx4Uv?usp=sharing" class="project-link"><i class="fa-solid fa-link"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="Images/work-4.jpg" alt="Another Project">
+                <div class="layer">
+                    <h3>Adobe Photoshop</h3>
+                    <p>A dynamic and best design of lab sheet prepared from Photoshop using different tools.</p>
+                    <a href="https://drive.google.com/drive/folders/1S094lVIqZL4iEM4kg2KMYnQriABlx4Uv?usp=sharing" class="project-link"><i class="fa-solid fa-link"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="Images/work-3.jpg" alt="Adobe Photoshop">
+                <div class="layer">
+                    <h3>Adobe Photoshop</h3>
+                    <p>A dynamic and best design of lab sheet prepared from Photoshop using different tools.</p>
+                    <a href="https://drive.google.com/drive/folders/1S094lVIqZL4iEM4kg2KMYnQriABlx4Uv?usp=sharing" class="project-link"><i class="fa-solid fa-link"></i></a>
+                </div>
+            </div>
+        </div>
+        <a href="https://drive.google.com/drive/folders/17YCerMM9_e2wC6brORlYzhOiI2kah0mn?usp=sharing" class="btn">See more</a>
+    </div>
+</div>
+
+
+<!------Contact------>
+
+<div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-title">Contact Me</h1>
+                <p>raykaushal888@gmail.com</p>
+                <p>+9779829396375</p>
+                <p>+917739438755</p>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/KaushalRay456/"><i class="fa-brands fa-square-facebook"></i></a>
+                    <a href=""><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/channel/UCv04h5GzuXRq6wEYjkxBTaw"><i class="fa-brands fa-youtube"></i></a>
+                    <a href=""><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+                <a href="Images/My CV.docx" download class="btn btn2">Download CV</a>
+            </div>
+            <div class="contact-right">
+                <form name="submit-to-google-sheet"> 
+                    <input type="text" name="Name" placeholder="Your Name" required>
+                    <input type="email" name="Email" placeholder="Your Email" required>
+                    <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                    <button type="submit" class="btn btn2">Submit</button>
+                </form>
+                <span id="msg"></span>
+            </div>
+        </div>
+    </div>
+    <div class="copyright">
+    <p>Copyright Ⓒ KR.Solutions. Made with <i class="fa-solid fa-heart"></i> by Kaushal</p>
+</div>
+</div>
+
+
+
+<!------Cursor animation ------>
+
+<div class="cursor"></div>
+
+
+<!------J.S------>
+<script>
+    // Get the cursor element
+    const cursor = document.querySelector('.cursor');
+
+    // Track mouse movements and update the cursor position
+    document.addEventListener('mousemove', (e) => {
+        let mouseX = e.clientX;
+        let mouseY = e.clientY;
+
+        // Update the cursor position
+        cursor.style.left = mouseX - cursor.offsetWidth / 2 + 'px';
+        cursor.style.top = mouseY - cursor.offsetHeight / 2 + 'px';
+    });
+</script>
+
+<!------Contact side menu code------>
+<script>
+var sidemenu = document.getElementById("sidemenu");
+function openmenu(){
+    sidemenu.style.right = "0";
+}
+function closemenu(){
+    sidemenu.style.right = "-200px";
+}</script>
+
+<!------Contact Info form code------>
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbwOBDXFhhiMMqqkDbqgvt3cqJ2BAxvzT9k7uV-IFut1a11x6z_NN86ommOYX0HEM9lELw/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const msg = document.getElementById("msg")
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            msg.innerHTML = "Message sent successfully"
+           setTimeout(function(){
+            msg.innerHTML =""
+           },5000)
+           form.reset()
+        })
+
+        .catch(error => {
+    msg.innerHTML = "Error sending message. Please try again.";
+    setTimeout(function(){
+        msg.innerHTML = ""
+    }, 5000);
+          });
+
+    })
+
+
+  </script>
+  
+
+</body>
+
+</html>

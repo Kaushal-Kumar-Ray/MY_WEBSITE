@@ -1,0 +1,114 @@
+img{
+    height: 170px;
+    width: 150px;
+    margin-bottom: 30px;
+    margin-left: 180px;
+   
+  }
+  h1{
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    appearance: above;
+    font-size: 70px;
+    margin-top: -130px;
+    margin-bottom: 30px;
+    color: #00b7ff;
+  }
+  .topnav {
+    background-color: #333;
+    overflow: hidden;
+  }
+  
+  /* Style the links inside the navigation bar */
+.topnav a {
+    float: left;
+    color: #55ffff;
+    text-align: center;
+    padding: 14px 50px;
+    text-decoration: none;
+    font-size: 30px;
+    tab-size: 100px;
+  }
+  
+.topnav a.active {
+    background-color: #00b7ff;
+    color: white;
+  }
+
+
+
+contact
+
+
+
+
+.id2{
+    font-size: 20px;
+    padding-left: 10px;
+    cursor: inherit;
+}
+.id3{
+    font-size: 20px;
+    padding-left: 10px;
+    cursor: inherit;
+}
+.id4{
+    font-size: 20px;
+    padding-left: 10px;
+    cursor: inherit;
+}
+.id5{
+    font-size: 20px;
+    padding-left: 10px;
+    cursor: inherit;
+}
+.id6{
+    font-size: 20px;
+    padding-left: 10px;
+    cursor: inherit;
+}
+.id7{
+    font-size: 20px;
+    padding-left: 10px;
+    cursor: inherit;
+}
+.id8{
+    font-size: 20px;
+    padding-left: 10px;
+    cursor: inherit;
+}
+.id9{
+    font-size: 20px;
+    padding-left: 10px;
+    cursor: inherit;
+}
+.id10{
+    font-size: 20px;
+    padding-left: 10px;
+    cursor: inherit;
+}
+.id11{
+    font-size: 20px;
+    padding-left: 10px;
+    cursor: inherit;
+}
+.id12{
+    font-size: 20px;
+    padding-left: 10px;
+    cursor: inherit;
+}
+.id13{
+    font-size: 20px;
+    padding-left: 10px;
+    cursor: inherit;
+}
+.id14{
+    font-size: 20px;
+    padding-left: 10px;
+    cursor: inherit;
+}
+.id15{
+    font-size: 20px;
+    padding-left: 10px;
+    cursor: inherit;
+}

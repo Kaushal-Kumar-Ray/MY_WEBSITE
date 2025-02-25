@@ -1,0 +1,1092 @@
+
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif; /* Modern font */
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #121212;
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    animation: glowingBackground 6s infinite linear;
+}
+
+@keyframes glowingBackground {
+    0% {
+        background: #121212;
+    }
+    50% {
+        background: #1a1a1a;
+    }
+    100% {
+        background: #121212;
+    }
+}
+
+/* Header Styles */
+#header {
+    width: 100%;
+    height: 100vh;
+    background-image: url(Images/background.png);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+    animation: parallaxEffect 10s ease-out infinite; /* Parallax effect for background */
+}
+
+@keyframes parallaxEffect {
+    0% {
+        background-position: center;
+    }
+    50% {
+        background-position: top left;
+    }
+    100% {
+        background-position: center;
+    }
+}
+
+#header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Dark overlay */
+    z-index: 1;
+}
+
+.container {
+    padding: 10px 10%;
+    position: relative;
+    z-index: 2;
+}
+
+/* Navigation Bar */
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    transition: all 0.3s ease;
+}
+
+.icon {
+    width: 170px;
+}
+
+nav ul li {
+    display: inline-block;
+    list-style: none;
+    margin: 10px 20px;
+}
+
+nav ul li a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-size: 18px;
+    position: relative;
+    padding-bottom: 4px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+nav ul li a::after {
+    content: '';
+    width: 0;
+    height: 3px;
+    background: rgb(255, 0, 0);
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: width 0.5s ease;
+}
+
+/* Hover Effect */
+nav ul li a:hover {
+    color: #00ffbf; /* Neon teal hover color */
+    transform: scale(1.1); /* Smooth scale-up effect */
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* Header Text */
+.header-text {
+    margin-top: 20%;
+    font-size: 30px;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    opacity: 0;
+    animation: fadeInText 2s ease-out forwards; /* Fade-in animation */
+}
+
+@keyframes fadeInText {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.header-text h1 {
+    font-size: 60px;
+    margin-top: 20px;
+    color: rgb(255, 255, 255);
+    font-weight: 700;
+    text-transform: uppercase;
+    animation: textGlow 3s infinite alternate;
+}
+
+/* Glowing text animation */
+@keyframes textGlow {
+    0% {
+        text-shadow: 0 0 15px #fff, 0 0 30px #00ffbf, 0 0 45px #00ffbf;
+    }
+    100% {
+        text-shadow: 0 0 10px #fff, 0 0 20px #00ffbf, 0 0 30px #00ffbf;
+    }
+}
+
+.header-text h1 span {
+    color: transparent;
+    -webkit-text-stroke: 2px blue;
+    background: url(Images/ani.jpg);
+    -webkit-background-clip: text;
+    background-position: 0 0;
+    animation: textScroll 20s linear infinite; /* Scrolling animation */
+}
+
+@keyframes textScroll {
+    100% {
+        background-position: 5000px 0;
+    }
+}
+
+/* Subtitle Styling */
+.subtitle {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5rem;
+    margin-top: 10px;
+    color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px 5%;
+    }
+
+    .header-text h1 {
+        font-size: 40px;
+    }
+
+    .subtitle {
+        font-size: 1.2rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .icon {
+        width: 150px;
+    }
+}
+
+/* Works Gallery Section */
+#gallery {
+    padding: 60px 0;
+    background: #0d0d0d;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Animated background glow for the gallery */
+#gallery::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(0, 255, 255, 0.1), rgba(0, 255, 255, 0.3) 70%);
+    animation: glowingPulse 6s infinite ease-in-out;
+    z-index: 0;
+}
+
+@keyframes glowingPulse {
+    0% {
+        opacity: 0.7;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.7;
+    }
+}
+
+/* Grid layout for works */
+.work-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 40px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Work items styling with subtle glow */
+.work {
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.work:hover {
+    transform: scale(1.05); /* Subtle scale effect on hover */
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5); /* Glow effect on hover */
+}
+
+/* Work image hover effect */
+.work img {
+    width: 100%;
+    border-radius: 10px;
+    display: block;
+    transition: transform 1s ease;
+}
+
+.work:hover img {
+    transform: scale(1.1); /* Image zoom effect */
+}
+
+/* Hover overlay with animated glow */
+.layer {
+    width: 100%;
+    height: 0;
+    background: linear-gradient(135deg, rgba(255, 0, 0, 0.7), rgba(0, 255, 255, 0.7));
+    border-radius: 10px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 40px;
+    text-align: center;
+    font-size: 14px;
+    transition: height 0.75s ease;
+    backdrop-filter: blur(3px);
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.7);
+}
+
+.work:hover .layer {
+    height: 100%;
+}
+
+/* Work title styling */
+.layer h3 {
+    font-weight: 500;
+    margin-bottom: 20px;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    z-index: 2;
+}
+
+/* Hover button with neon effects */
+.layer a {
+    margin-top: 20px;
+    color: #0d0d0d;
+    text-decoration: none;
+    font-size: 16px;
+    line-height: 60px;
+    background: #fff;
+    width: 80px;
+    height: 40px;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: bold;
+    position: relative;
+    transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
+    z-index: 2;
+}
+
+.layer a:hover {
+    background: #00ffbf;
+    color: #0d0d0d;
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #00ffbf, 0 0 30px #00ffbf;
+}
+
+/* Glowing outline effect */
+.work::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    transition: border-color 0.5s ease;
+}
+
+.work:hover::after {
+    border-color: #00ffbf;
+    box-shadow: 0 0 20px #00ffbf, 0 0 40px #00ffbf;
+}
+
+/*---------- About Section --------*/
+#about {
+    padding: 80px 0;
+    color: #ffffff;
+    background: #121212;
+    box-shadow: inset 0 0 100px rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+    animation: smoothBackground 6s ease-in-out infinite;
+}
+
+@keyframes smoothBackground {
+    0% {
+        background: #121212;
+    }
+    50% {
+        background: #1a1a1a;
+    }
+    100% {
+        background: #121212;
+    }
+}
+
+#about:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 200%;
+    background: rgba(255, 255, 255, 0.1);
+    transform: translate(-50%, -50%);
+    animation: subtlePulse 4s infinite ease-in-out;
+}
+
+@keyframes subtlePulse {
+    0% {
+        transform: scale(1);
+        opacity: 0.1;
+    }
+    50% {
+        transform: scale(1.05);
+        opacity: 0.3;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0.1;
+    }
+}
+
+/* Content Layout */
+.row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 10;
+}
+
+.about-col-1 {
+    flex-basis: 35%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.about-col-1 img {
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    transform: scale(1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-col-1 img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 50px rgba(0, 255, 255, 0.6);
+}
+
+.about-col-2 {
+    flex-basis: 60%;
+}
+
+/* Titles */
+.sub-title {
+    font-size: 60px;
+    font-weight: 600;
+    color: #ff6f00;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    position: relative;
+    text-shadow: 0 0 15px #ff6f00, 0 0 30px #ff6f00, 0 0 60px #ff6f00;
+    animation: subtleGlow 3s ease-in-out infinite alternate;
+}
+
+
+.sub-title:after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #ff6f00;
+    animation: smoothGlow 1.5s ease-in-out infinite alternate;
+}
+
+
+
+/* Tabs */
+.tab-titles {
+    display: flex;
+    margin: 20px 0 40px;
+    gap: 20px;
+    position: relative;
+    justify-content: center;
+}
+
+.tab-links {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+    padding: 5px 10px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.tab-links:hover {
+    color: #ff6f00;
+    transform: scale(1.1);
+}
+
+.tab-links::after {
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #ff6f00;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: width 0.3s ease;
+}
+
+.tab-links.active-link::after {
+    width: 100%;
+}
+
+.tab-contents {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.tab-contents.active-tab {
+    display: block;
+    opacity: 1;
+    animation: slideUp 1s ease-out;
+}
+
+@keyframes slideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Glowing Border for Active Tabs */
+.tab-links.active-link {
+    color: #ff6f00;
+    border-bottom: 3px solid #ff6f00;
+}
+
+
+
+
+
+
+#services {
+    padding: 80px 0;
+    background: #121212; /* Dark background for contrast */
+    box-shadow: inset 0 0 100px rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.sub-title {
+    font-size: 60px;
+    font-weight: 600;
+    color: #00e1ff; /* Soft cyan glow */
+    letter-spacing: 2px;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    position: relative;
+    text-align: center;
+}
+
+.services-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 40px;
+    margin-top: 50px;
+}
+
+.services-list div {
+    background: #2c2c2c;
+    padding: 40px;
+    font-size: 16px;
+    font-weight: 300;
+    border-radius: 12px;
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Smooth glowing effect */
+.services-list div:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(135deg, #00e1ff, #0033ff);
+    transform: translate(-50%, -50%) rotate(45deg);
+    z-index: -1;
+    animation: rotateGlow 5s infinite linear;
+}
+
+/* Smooth blue rotating glow */
+@keyframes rotateGlow {
+    0% {
+        transform: translate(-50%, -50%) rotate(45deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(405deg);
+    }
+}
+
+/* Hover effects */
+.services-list div:hover {
+    background: #00e1ff;
+    transform: scale(1.05);
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.4);
+}
+
+/* Icon animations */
+.services-list div i {
+    font-size: 50px;
+    margin-bottom: 30px;
+    color: #00e1ff; /* Cyan color for icons */
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.services-list div:hover i {
+    transform: scale(1.2);
+    color: #ffffff; /* Icon turns white when hovered */
+}
+
+/* Title styles */
+.services-list div h2 {
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 15px;
+    color: #fff;
+    transition: color 0.3s ease;
+}
+
+/* Links styles */
+.services-list div a {
+    text-decoration: none;
+    color: #00e1ff; /* Link color matches glowing effect */
+    font-size: 14px;
+    margin-top: 20px;
+    display: inline-block;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+/* Smooth underline effect */
+.services-list div a::after {
+    content: '';
+    width: 0;
+    height: 2px;
+    background: #00e1ff; /* Matching glow */
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    transition: width 0.3s ease;
+}
+
+/* Hover effect for links */
+.services-list div:hover a {
+    color: #fff; /* Change link color on hover */
+}
+
+.services-list div:hover a::after {
+    width: 100%; /* Underline expands smoothly */
+}
+
+/* Glowing hover effect */
+.services-list div:hover {
+    background: #0033ff; /* Blue background on hover */
+    box-shadow: 0 0 40px #0033ff, 0 0 80px #0033ff;
+    transform: translateY(-10px); /* Smooth upwards movement */
+}
+
+/*--- ------------------------Works done---------------*/
+/* Gallery Section */
+#gallery {
+    padding: 50px 0;
+}
+
+.work-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 40px;
+    margin-top: 50px;
+}
+
+.work {
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.work img {
+    width: 100%;
+    border-radius: 10px;
+    display: block;
+    transition: transform 1s ease;
+}
+
+.layer {
+    width: 100%;
+    height: 0;
+    background: linear-gradient(rgba(255, 0, 0, 0.774), #00e1ff);
+    border-radius: 10px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 40px;
+    text-align: center;
+    font-size: 14px;
+    transition: height 0.75s ease-in-out;
+    z-index: 1; /* Ensure the layer is above other elements */
+}
+
+.layer h3 {
+    font-weight: 500;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.layer p {
+    margin-bottom: 20px;
+    color: white;
+    font-size: 16px;
+}
+
+/* Style for the anchor tag within the layer */
+.layer a {
+    margin-top: 20px;
+    color: #fff; /* Make the text white */
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 60px;
+    background: transparent; /* Transparent background */
+    width: 60px;
+    height: 60px; /* Increased height to center the icon properly */
+    border-radius: 50%; /* Make the box circular */
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease; /* Smooth hover transition */
+    position: relative;
+    z-index: 2; /* Ensure the link is above the .layer background */
+}
+
+/* On hover, change the background and text color */
+.layer a:hover {
+    background: #00e1ff; /* Light blue background on hover */
+    transform: scale(1.1); /* Slightly increase size */
+    box-shadow: 0 0 15px rgba(0, 225, 255, 0.8); /* Glowing effect */
+}
+
+/* Style for Font Awesome link icon */
+.layer a i {
+    font-size: 24px; /* Adjust the icon size */
+    color: #000; /* Icon color is black */
+    transition: all 0.3s ease;
+}
+
+/* On hover, change the icon color */
+.layer a:hover i {
+    color: #fff; /* White icon on hover */
+}
+
+/* Hover effect on the work image */
+.work:hover img {
+    transform: scale(1.1);
+}
+
+/* When hovering on the work item, show the layer */
+.work:hover .layer {
+    height: 100%;
+}
+
+/* "See more" button styles */
+.btn {
+    display: inline-block;
+    padding: 15px 40px;
+    background-color: #00e1ff;
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    text-align: center;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    margin-top: 40px;
+}
+
+.btn:hover {
+    background-color: #0077b6;
+    box-shadow: 0 0 10px rgba(0, 225, 255, 0.6); /* Glowing effect on button */
+}
+
+
+/*---------------------Button animation-------------------*/
+/* Button Styling */
+.btn {
+    display: block;
+    margin: 40px auto;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 18px;
+    width: fit-content;
+    border-radius: 15px;
+    border: 3px solid #00ccff;
+    padding: 14px 40px;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    z-index: 1;
+    position: relative; /* Ensure the button can interact with the ::before pseudo-element */
+    overflow: hidden;
+    transition: color 1s, box-shadow 1s ease; /* Smooth transition for color and shadow */
+}
+
+/* Hover Effect for Button */
+.btn:hover {
+    color: #fff;
+    box-shadow: 
+        0 0 10px #00d9ff,
+        0 0 20px #00d9ff,
+        0 0 40px #00d9ff,
+        0 0 80px #00d9ff,
+        0 0 160px #00d9ff; /* Glowing blue effect */
+}
+
+/* ::before pseudo-element for the animated background */
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -40px; /* Start from the left */
+    width: 0; /* Initial width */
+    height: 10%; /* Height of the background bar */
+    background: #00d9ff; /* Blue color */
+    transform: skewX(35deg); /* Skew the background */
+    z-index: -1; /* Place it behind the button text */
+    transition: width 1s ease; /* Smooth transition for width */
+}
+
+/* Hover Effect on ::before to expand the background */
+.btn:hover::before {
+    width: 100%; /* On hover, the background bar will expand to full width */
+}
+
+
+
+
+/*--------------------Cursor animation-------------------*/
+/* Custom cursor style */
+.cursor {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    transition: transform 0.1s ease-out;
+    background: radial-gradient(circle, #ff0000, #ff7300, #fffb00, #00ff00, #00bfff, #7a00ff);
+    background-size: 400% 400%;
+    animation: rainbowEffect 3s linear infinite, cursorGlow 1s ease-out infinite;
+}
+
+/* Keyframe for the rainbow color effect */
+@keyframes rainbowEffect {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Keyframe for the glowing effect */
+@keyframes cursorGlow {
+    0% {
+        box-shadow: 0 0 5px 2px rgba(255, 255, 255, 0.5);
+    }
+    50% {
+        box-shadow: 0 0 15px 8px rgba(255, 255, 255, 0.7);
+    }
+    100% {
+        box-shadow: 0 0 5px 2px rgba(255, 255, 255, 0.5);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*---------------------Contact-------------------*/
+.contact-left{
+    flex-basis: 35%;
+}
+.contact-right{
+    flex-basis: 35%;
+}
+.contact-left p{
+    margin-top: 30px; 
+
+}
+.contact-left p i{
+    color: #21ff0c;
+    margin-right: 15px;
+    font-size: 25px;
+}
+.social-icons{
+    margin-top: 30px;
+} 
+.social-icons a{
+    text-decoration: none;
+    font-size: 30px;
+    margin-right: 15px;
+    color: #ababab;
+    display: inline-block;
+    transition: transform 0.5s;
+}
+.social-icons a:hover{
+color: #0cf800;
+transform: translateY(-5px);
+}
+.btn.btn2{
+    display: inline-block;
+    background-color: black;
+}
+.contact-right form{
+    width: 100%;
+}
+form input, textarea{
+    width: 100%;
+    border: 0;
+    outline: none;
+    background: #262626;
+    padding: 15px;
+    margin: 15px 0;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 6px;
+}
+form .btn2{
+    padding: 14px 60px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 18px;
+    margin-top: 20px;
+    cursor: pointer;
+
+} 
+.copyright{
+width: 100%;
+text-align: center;
+padding: 25px 0;
+background: #262626;
+font-weight: 300;
+margin-top: 20px;    
+}
+.copyright i{
+    color: red;
+}
+
+
+/*---------------------CSS  for Small Screens-------------------*/
+
+nav .fas{
+    display: none;
+}
+@media only screen and (max-width: 600px){
+    #header{
+        background-image: url(Images/phone-background.png);
+    }
+    
+    .header-text{
+        margin-top: 100%;
+        font-size: 16px;
+    }
+    .header-text h1{
+        font-size: 30px;
+        color: rgb(255, 255, 255);
+    }
+    nav .fas{
+        display: block;
+        font-size: 25px;
+    }
+    nav ul{
+        top: 0;
+        right: -200px;
+        width: 200px;
+        height: 100vh;
+        padding-top: 50px;
+        z-index: 2;
+        transition: right 0.5s;
+        position: absolute;
+        background-color: rgba(17, 20, 104, 0.45);
+        backdrop-filter: blur(4.5px);
+        border: 1px solid rgba(225, 255, 255, 0.18);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+    nav ul li{
+        display: block;
+        margin: 25px;
+    }
+    nav ul .fas{
+        position: absolute;
+        top: 25px;
+        left: 25px;
+        cursor: pointer;
+    }
+    .sub-title{
+        font-size: 40px;
+    }
+    .about-col-1, .about-col-2{
+        flex-basis: 100%;
+    }
+    .about-col-1{
+        margin-bottom: 30px;
+    }
+    .about-col-2{
+        font-size: 14px;
+    }
+    .tab-links{
+        margin-right: 20px;
+    }
+    .contact-left, .contact-right{
+        flex-basis: 100%;
+    }
+    .copyright{
+        font-size: 15px;
+    }
+    .logo{
+        width: 100px;
+    }
+    .header-text h1 span{
+        color: rgb(255, 255, 255);
+        font-size: 60px;
+        color: transparent;
+        -webkit-text-stroke: 2px blue;
+        background: url(Images/ani2.jpg);
+        -webkit-background-clip: text;
+        background-position: 0 0;
+          animation: back 20s linear infinite;
+    }
+    @keyframes back{
+       100%{
+        background-position: 5000px 0;
+         }
+    }
+}
+#msg{
+    color: #61b725;
+    margin-top: -40px;
+    display: block;
+
+
+}    
+
+
+
+
+
+
+
+
+
+

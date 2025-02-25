@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" type="Image/x-icon" href="Images/icon.png">
+</head>
+<body>
+    <div class="background">
+        <div class="container">
+            <div class="player">
+                <div class="thumbnail-container">
+                    <img id="album-art" src="default.jpg" alt="">
+                </div>
+                <div class="track-info">
+                    <div class="description">
+                        <h3 id="track-title">Track Title</h3>
+                        <p id="track-description">Track Description</p>
+                    </div>
+                </div>
+                <div class="controls-container">
+                    <div class="controls">
+                        <button id="prev" class="icon-button"><i class="fas fa-step-backward"></i></button>
+                        <button id="play" class="icon-button"><i class="fas fa-play"></i></button>
+                        <button id="pause" class="icon-button"><i class="fas fa-pause"></i></button>
+                        <button id="next" class="icon-button"><i class="fas fa-step-forward"></i></button>
+                    </div>
+                </div>
+                <div class="seek-volume">
+                    <div class="time-info">
+                        <span id="current-time">0:00</span> / <span id="duration">0:00</span>
+                    </div>
+                    <input type="range" id="seek-bar" min="0" max="100" value="0" class="range">
+                    <input type="range" id="volume-bar" min="0" max="1" step="0.01" value="0.5" class="range">
+                    <div class="volume-info">
+                        Volume: <span id="volume-level">50%</span>
+                    </div>
+                </div>
+            </div>
+            <div class="playlist-container">
+                <h2>Playlist</h2>
+                <div class="playlist-scroll">
+                    <ul id="playlist" class="playlist">
+                        <!-- Songs will be dynamically inserted here -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <audio id="audio" src=""></audio>
+    
+    <!-- Song data in JSON format -->
+    <script id="songs-data" type="application/json">
+    [
+        {"src": "Audio/song1.mp3", "art": "Images/img1.jpg", "title": "Achyutam keshavam full song shree Krishna", "description": "Worship Song 1"},
+        {"src": "Audio/song2.mp3", "art": "Images/img2.jpg", "title": "Soja Zara Baahubali 2 The Conclusion Anushka Prabhas", "description": "Worship Song 2"},
+        {"src": "Audio/song3.mp3", "art": "Images/img3.jpg", "title": "Oonchi Oonchi Waadi OMG 2 Akshay Kumar", "description": "Worship Song 3"},
+        {"src": "Audio/song4.mp3", "art": "Images/img4.jpg", "title": "Shyama Aan Baso Vrindavan Mein Krishna Bhajan", "description": "Worship Song 4"},
+        {"src": "Audio/song5.mp3", "art": "Images/img5.jpg", "title": "Raam Aayenge Swati Mishra Bhajan", "description": "Worship Song 5"},
+        {"src": "Audio/song6.mp3", "art": "Images/img6.jpg", "title": "Deva Deva Brahmāstra Amitabh Ranbir Aliabhatt Pritam", "description": "Worship Song 6"},
+        {"src": "Audio/song7.mp3", "art": "Images/img7.jpg", "title": "Qaafirana Kedarnath Sushant Rajput Sara Ali Khan", "description": "Worship Song 7"},
+        {"src": "Audio/song8.mp3", "art": "Images/img8.jpg", "title": "Kesariya Film Version Brahmāstra Ranbir Alia Arijit", "description": "Hindi Song 8"},
+        {"src": "Audio/song9.mp3", "art": "Images/img9.jpg", "title": "Mast Magan Lyrics Arijit Singh Arjun Kapoor Alia Bhatt", "description": "Hindi Song 9"},
+        {"src": "Audio/song10.mp3", "art": "Images/img10.jpg", "title": "Anuv Jain HUSN Official music audio", "description": "Hindi Song 10"},
+        {"src": "Audio/song11.mp3", "art": "Images/img11.jpg", "title": "Dil Diyan Gallan Song Salman Khan Katrina Kaif", "description": "Hindi Song 11"},
+        {"src": "Audio/song12.mp3", "art": "Images/img12.jpg", "title": "JAB TAK Armaan Malik Amaal Mallik Sushant Singh Rajput", "description": "Hindi Song 12"},
+        {"src": "Audio/song13.mp3", "art": "Images/img13.jpg", "title": "Ranjha Lyric Shershaah Sidharth KiaraB Praak Jasleen", "description": "Hindi Song 13"},
+        {"src": "Audio/song14.mp3", "art": "Images/img14.jpg", "title": "Kho gaye hum kahan lyrics jasleen royal", "description": "Hindi Song 14"},
+        {"src": "Audio/song15.mp3", "art": "Images/img15.jpg", "title": "Jubin Nautiyal Teri Galliyon Se Gurmeet Choudhary", "description": "Hindi Song 15"},
+        {"src": "Audio/song16.mp3", "art": "Images/img16.jpg", "title": "Give Me Some Sunshine 3 Idiots Aamir Khan", "description": "Student life Song 16"},
+        {"src": "Audio/song17.mp3", "art": "Images/img17.jpg", "title": "Ek Zindagi Angrezi Medium Irrfan Radhika M Kareena", "description": "Student life Song 17"},
+        {"src": "Audio/song18.mp3", "art": "Images/img18.jpg", "title": "Magic system magic in the air feat chawki clip", "description": "English Song 18"},
+        {"src": "Audio/song19.mp3", "art": "Images/img19.jpg", "title": "Shawn mendes theres nothing holding me back lyrics", "description": "English Song 19"},
+        {"src": "Audio/song20.mp3", "art": "Images/img20.jpg", "title": "Sushant KC Kya Kardiya Official Music", "description": "Made in Nepal Song 20"},
+        {"src": "Audio/song21.mp3", "art": "Images/img21.jpg", "title": "Sushant KC Parkha Na ft Jhuma Limbu Official Music", "description": "Nepali Song 21"},
+        {"src": "Audio/song22.mp3", "art": "Images/img22.jpg", "title": "Sushant KC Sarangi Official Music", "description": "Nepali Song 22"}
+
+        
+    ]
+    </script>
+
+    <script src="script.js"></script>
+</body>
+</html>

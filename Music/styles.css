@@ -1,0 +1,271 @@
+/* styles.css */
+
+/* General Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #f06, #4a90e2);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.background {
+    width: 90vw;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: row; /* Default to row for larger screens */
+    width: 100%;
+    height: 100%;
+    gap: 20px; /* Space between player and playlist */
+    overflow: hidden;
+}
+
+.player {
+    width: 60%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.673);
+    border-radius: 15px;
+    padding: 20px, 0, 0, 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.thumbnail-container {
+    width: 200px;
+    height: 200px;
+    background: white;
+    border-radius: 50%;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.thumbnail-container img {
+    width: 95%;
+    height: 95%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.track-info {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.description h3 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.description p {
+    margin: 5px 0 0;
+    font-size: 16px;
+}
+
+.controls-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2px;
+}
+
+.controls {
+    display: flex;
+    align-items: center;
+}
+
+.icon-button {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+    margin: 0 10px;
+}
+
+.seek-volume {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.time-info {
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.range {
+    width: 80%;
+    margin: 10px 0;
+}
+
+.volume-info {
+    margin-bottom: 12px;
+    font-size: 16px;
+}
+
+.playlist-container {
+    width: 40%;
+    height: 100%;
+    background: rgba(26, 1, 44, 0.766);
+    border-radius: 15px;
+    padding: 20px, 0, 0, 10px;
+    overflow-y: auto; /* Ensure overflow works correctly */
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.playlist-container h2 {
+    padding-left: 10px;
+    margin: 0;
+    font-size: 24px;
+    border-bottom: 2px solid #444;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    margin-bottom: 10px;
+}
+
+.playlist-scroll {
+    flex: 1;
+    overflow-y: auto;
+}
+
+.playlist {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.playlist li {
+    padding: 10px;
+    cursor: pointer;
+    border-bottom: 1px solid #444;
+    transition: background 0.3s ease;
+}
+
+.playlist li:hover {
+    background: #076db0b9;
+}
+
+.playlist li.active {
+    background: #076db0b9;
+    color: #fff;
+}
+
+/* Mobile Styles */
+@media (max-width: 412px) {
+    .container {
+        flex-direction: column; /* Stack player and playlist vertically */
+        gap: 10px; /* Adjust gap for mobile screens */
+    }
+
+    .player {
+        width: 100%;
+        height: auto;
+    }
+
+    .playlist-container {
+        width: 100%;
+        height: 60%;
+        max-height: 150vh; /* Set max-height to fit the viewport */
+    }
+
+    .thumbnail-container {
+        width: 150px;
+        height: 150px;
+    }
+
+    .description h3 {
+        font-size: 18px;
+    }
+
+    .description p {
+        font-size: 14px;
+    }
+
+    .icon-button {
+        font-size: 20px;
+        margin: 0 5px;
+    }
+
+    .range {
+        width: 70%;
+        max-width: 250px; /* Ensure the range controls are not too large */
+    }
+
+    .time-info {
+        font-size: 14px;
+    }
+
+    .volume-info {
+        font-size: 14px;
+    }
+
+    .playlist-container h2 {
+        font-size: 20px;
+    }
+
+    .playlist li {
+        padding: 8px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 375px) {
+    .thumbnail-container {
+        width: 120px;
+        height: 120px;
+    }
+
+    .description h3 {
+        font-size: 12px;
+        
+    }
+
+    .description p {
+        font-size: 12px;
+    }
+
+    .icon-button {
+        font-size: 18px;
+    }
+
+    .time-info {
+        font-size: 12px;
+    }
+
+    .volume-info {
+        font-size: 12px;
+    }
+    .playlist-container{
+        width: 100%;
+        height: 100%;
+        max-height: 450vh; /* Set max-height to fit the viewport */
+    }
+
+    .playlist-container h2 {
+        font-size: 18px;
+    }
+
+    .playlist li {
+        padding: 6px;
+        font-size: 12px;
+    }
+}
