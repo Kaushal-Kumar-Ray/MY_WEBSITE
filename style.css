@@ -1,4 +1,3 @@
-
 /* Global Styles */
 * {
     margin: 0;
@@ -12,29 +11,50 @@ html {
 }
 
 body {
-    background: #121212;
-    color: #fff;
+    background: linear-gradient(135deg, #001f3f, #011826);
+    color: #d0eaff;
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
     overflow-x: hidden;
     box-sizing: border-box;
-    animation: glowingBackground 6s infinite linear;
+    animation: glowingBackground 6s infinite alternate ease-in-out;
+    text-shadow: 0 0 15px rgba(0, 170, 255, 0.7);
 }
 
 @keyframes glowingBackground {
     0% {
-        background: #121212;
+        background: #001f3f;
+        box-shadow: 0 0 15px rgba(0, 170, 255, 0.4);
     }
     50% {
-        background: #1a1a1a;
+        background: #012a4a;
+        box-shadow: 0 0 35px rgba(0, 170, 255, 0.6);
     }
     100% {
-        background: #121212;
+        background: #001f3f;
+        box-shadow: 0 0 15px rgba(0, 170, 255, 0.4);
     }
 }
 
-/* Header Styles */
+/* Bluish Glow for Elements */
+
+.active-tab {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/*Header  */
 #header {
     width: 100%;
     height: 100vh;
@@ -75,6 +95,8 @@ body {
     z-index: 2;
 }
 
+
+
 /* Navigation Bar */
 nav {
     display: flex;
@@ -88,14 +110,17 @@ nav {
     width: 170px;
 }
 
+nav ul {
+    display: flex;
+    gap: 20px;
+}
+
 nav ul li {
-    display: inline-block;
     list-style: none;
-    margin: 10px 20px;
 }
 
 nav ul li a {
-    color: rgb(255, 255, 255);
+    color: #d0eaff;
     text-decoration: none;
     font-size: 18px;
     position: relative;
@@ -107,31 +132,34 @@ nav ul li a::after {
     content: '';
     width: 0;
     height: 3px;
-    background: rgb(255, 0, 0);
+    background: #00aaff;
     position: absolute;
     left: 0;
     bottom: -6px;
     transition: width 0.5s ease;
+    box-shadow: 0 0 8px #00aaff;
 }
 
 /* Hover Effect */
 nav ul li a:hover {
-    color: #00ffbf; /* Neon teal hover color */
-    transform: scale(1.1); /* Smooth scale-up effect */
+    color: #00aaff;
+    transform: scale(1.1);
 }
 
 nav ul li a:hover::after {
     width: 100%;
 }
 
-/* Header Text */
+
+/* ----------Header Text--------------- */
 .header-text {
     margin-top: 20%;
     font-size: 30px;
-    color: rgb(255, 255, 255);
+    color: #d0eaff;
     text-align: center;
     opacity: 0;
-    animation: fadeInText 2s ease-out forwards; /* Fade-in animation */
+    animation: fadeInText 2s ease-out forwards, pulseGlow 3s infinite alternate; /* Fade-in + Glow effect */
+    text-shadow: 0 0 15px rgba(0, 170, 255, 0.7);
 }
 
 @keyframes fadeInText {
@@ -145,47 +173,79 @@ nav ul li a:hover::after {
     }
 }
 
+/* Soft Pulsing Glow */
+@keyframes pulseGlow {
+    0% {
+        text-shadow: 0 0 10px #00aaff, 0 0 20px #0088ff, 0 0 30px #0066ff;
+    }
+    100% {
+        text-shadow: 0 0 20px #00c3ff, 0 0 35px #00aaff, 0 0 50px #0099ff;
+    }
+}
+
 .header-text h1 {
     font-size: 60px;
     margin-top: 20px;
-    color: rgb(255, 255, 255);
     font-weight: 700;
     text-transform: uppercase;
-    animation: textGlow 3s infinite alternate;
+    animation: futuristicGlow 3s infinite alternate;
 }
 
-/* Glowing text animation */
-@keyframes textGlow {
+/* Glowing futuristic text animation */
+@keyframes futuristicGlow {
     0% {
-        text-shadow: 0 0 15px #fff, 0 0 30px #00ffbf, 0 0 45px #00ffbf;
+        text-shadow: 0 0 15px #00aaff, 0 0 30px #00ccff, 0 0 45px #00e6ff;
     }
     100% {
-        text-shadow: 0 0 10px #fff, 0 0 20px #00ffbf, 0 0 30px #00ffbf;
+        text-shadow: 0 0 10px #0088ff, 0 0 20px #00aaff, 0 0 30px #00c3ff;
     }
 }
 
+/* Holographic scrolling effect */
 .header-text h1 span {
     color: transparent;
-    -webkit-text-stroke: 2px blue;
+    -webkit-text-stroke: 2px #00c3ff;
     background: url(Images/ani.jpg);
     -webkit-background-clip: text;
     background-position: 0 0;
-    animation: textScroll 20s linear infinite; /* Scrolling animation */
+    animation: textScroll 10s linear infinite, neonPulse 3s infinite alternate;
 }
 
+/* Faster scrolling effect */
 @keyframes textScroll {
     100% {
-        background-position: 5000px 0;
+        background-position: 2000px 0;
+    }
+}
+
+/* Pulsing glow for neon effect */
+@keyframes neonPulse {
+    0% {
+        text-shadow: 0 0 10px #00c3ff, 0 0 20px #00e6ff, 0 0 30px #00ffff;
+    }
+    100% {
+        text-shadow: 0 0 20px #00aaff, 0 0 35px #0088ff, 0 0 50px #0066ff;
     }
 }
 
 /* Subtitle Styling */
 .subtitle {
-    font-family: 'Roboto', sans-serif;
     font-size: 1.5rem;
     margin-top: 10px;
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(208, 234, 255, 0.8);
     text-align: center;
+    text-shadow: 0 0 10px #00aaff;
+    animation: subtleGlow 4s infinite alternate;
+}
+
+/* Subtle glowing animation */
+@keyframes subtleGlow {
+    0% {
+        text-shadow: 0 0 10px #00aaff;
+    }
+    100% {
+        text-shadow: 0 0 20px #00e6ff;
+    }
 }
 
 /* Mobile Responsiveness */
@@ -544,137 +604,93 @@ nav ul li a:hover::after {
 
 
 
-
-
-
-#services {
-    padding: 80px 0;
-    background: #121212; /* Dark background for contrast */
-    box-shadow: inset 0 0 100px rgba(255, 255, 255, 0.1);
-    position: relative;
-    overflow: hidden;
-}
-
-.sub-title {
-    font-size: 60px;
-    font-weight: 600;
-    color: #00e1ff; /* Soft cyan glow */
-    letter-spacing: 2px;
-    margin-bottom: 40px;
-    text-transform: uppercase;
-    position: relative;
-    text-align: center;
-}
-
-.services-list {
+/* --------------------------SKILLS-----------------------*/
+.skills-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    grid-gap: 40px;
-    margin-top: 50px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    justify-content: center;
 }
 
-.services-list div {
+.skill-box {
     background: #2c2c2c;
     padding: 40px;
-    font-size: 16px;
-    font-weight: 300;
     border-radius: 12px;
-    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-    position: relative;
-    overflow: hidden;
+    text-align: center;
+    transition: 0.3s;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* Smooth glowing effect */
-.services-list div:before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 200%;
-    height: 200%;
-    background: linear-gradient(135deg, #00e1ff, #0033ff);
-    transform: translate(-50%, -50%) rotate(45deg);
-    z-index: -1;
-    animation: rotateGlow 5s infinite linear;
-}
-
-/* Smooth blue rotating glow */
-@keyframes rotateGlow {
-    0% {
-        transform: translate(-50%, -50%) rotate(45deg);
-    }
-    100% {
-        transform: translate(-50%, -50%) rotate(405deg);
-    }
-}
-
-/* Hover effects */
-.services-list div:hover {
+/* Hover Effect */
+.skill-box:hover {
     background: #00e1ff;
     transform: scale(1.05);
     box-shadow: 0 15px 50px rgba(0, 0, 0, 0.4);
 }
 
-/* Icon animations */
-.services-list div i {
+/* Icon Styles */
+.skill-box i {
     font-size: 50px;
-    margin-bottom: 30px;
-    color: #00e1ff; /* Cyan color for icons */
-    transition: transform 0.3s ease, color 0.3s ease;
+    margin-bottom: 20px;
+    color: #00e1ff;
+    transition: color 0.3s;
+}
+.skill-box:hover i,
+.skill-box:hover h2,
+.skill-box:hover p {
+    color: black;
 }
 
-.services-list div:hover i {
-    transform: scale(1.2);
-    color: #ffffff; /* Icon turns white when hovered */
+/* Title & Paragraph */
+.skill-box h2 {
+    font-size: 24px;
+    color: white;
+    margin-bottom: 10px;
 }
 
-/* Title styles */
-.services-list div h2 {
-    font-size: 30px;
-    font-weight: 500;
-    margin-bottom: 15px;
-    color: #fff;
-    transition: color 0.3s ease;
+.skill-box p {
+    font-size: 16px;
+    color: #ccc;
+    margin-bottom: 20px;
 }
 
-/* Links styles */
-.services-list div a {
-    text-decoration: none;
-    color: #00e1ff; /* Link color matches glowing effect */
-    font-size: 14px;
-    margin-top: 20px;
-    display: inline-block;
+/* Progress Bar */
+.progress-bar {
+    width: 100%;
+    height: 12px;
+    background: #444;
+    border-radius: 6px;
+    overflow: hidden;
     position: relative;
-    transition: color 0.3s ease;
+    margin-top: 10px;
 }
 
-/* Smooth underline effect */
-.services-list div a::after {
-    content: '';
+.progress {
     width: 0;
-    height: 2px;
-    background: #00e1ff; /* Matching glow */
+    height: 100%;
+    background: #00ff00;
+    transition: width 1s ease-in-out;
+    position: relative;
+}
+
+/* Percentage Text */
+.progress-text {
     position: absolute;
-    bottom: -4px;
-    left: 0;
-    transition: width 0.3s ease;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 14px;
+    font-weight: bold;
+    color: #ff0000;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
 }
 
-/* Hover effect for links */
-.services-list div:hover a {
-    color: #fff; /* Change link color on hover */
-}
-
-.services-list div:hover a::after {
-    width: 100%; /* Underline expands smoothly */
-}
-
-/* Glowing hover effect */
-.services-list div:hover {
-    background: #0033ff; /* Blue background on hover */
-    box-shadow: 0 0 40px #0033ff, 0 0 80px #0033ff;
-    transform: translateY(-10px); /* Smooth upwards movement */
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .skills-list {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
 }
 
 /*--- ------------------------Works done---------------*/
@@ -855,132 +871,116 @@ nav ul li a:hover::after {
 
 
 
-
-/*--------------------Cursor animation-------------------*/
-/* Custom cursor style */
-.cursor {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    pointer-events: none;
-    transition: transform 0.1s ease-out;
-    background: radial-gradient(circle, #ff0000, #ff7300, #fffb00, #00ff00, #00bfff, #7a00ff);
-    background-size: 400% 400%;
-    animation: rainbowEffect 3s linear infinite, cursorGlow 1s ease-out infinite;
-}
-
-/* Keyframe for the rainbow color effect */
-@keyframes rainbowEffect {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
-}
-
-/* Keyframe for the glowing effect */
-@keyframes cursorGlow {
-    0% {
-        box-shadow: 0 0 5px 2px rgba(255, 255, 255, 0.5);
-    }
-    50% {
-        box-shadow: 0 0 15px 8px rgba(255, 255, 255, 0.7);
-    }
-    100% {
-        box-shadow: 0 0 5px 2px rgba(255, 255, 255, 0.5);
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*---------------------Contact-------------------*/
-.contact-left{
+.contact-left {
     flex-basis: 35%;
 }
-.contact-right{
-    flex-basis: 35%;
-}
-.contact-left p{
-    margin-top: 30px; 
 
+.contact-right {
+    flex-basis: 60%;
 }
-.contact-left p i{
-    color: #21ff0c;
-    margin-right: 15px;
-    font-size: 25px;
-}
-.social-icons{
-    margin-top: 30px;
-} 
-.social-icons a{
-    text-decoration: none;
-    font-size: 30px;
-    margin-right: 15px;
-    color: #ababab;
-    display: inline-block;
-    transition: transform 0.5s;
-}
-.social-icons a:hover{
-color: #0cf800;
-transform: translateY(-5px);
-}
-.btn.btn2{
-    display: inline-block;
-    background-color: black;
-}
-.contact-right form{
-    width: 100%;
-}
-form input, textarea{
-    width: 100%;
-    border: 0;
-    outline: none;
-    background: #262626;
-    padding: 15px;
-    margin: 15px 0;
-    color: #fff;
-    font-size: 18px;
-    border-radius: 6px;
-}
-form .btn2{
-    padding: 14px 60px;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 18px;
+
+.contact-left p {
     margin-top: 20px;
-    cursor: pointer;
-
-} 
-.copyright{
-width: 100%;
-text-align: center;
-padding: 25px 0;
-background: #262626;
-font-weight: 300;
-margin-top: 20px;    
+    font-size: 18px;
+    color: #ddd;
+    display: flex;
+    align-items: center;
 }
-.copyright i{
+
+.contact-left p i {
+    color: #21ff0c;
+    margin-right: 10px;
+    font-size: 24px;
+}
+
+.social-icons {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons a {
+    text-decoration: none;
+    font-size: 28px;
+    color: #ababab;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #00d9ff;
+    transform: scale(1.2);
+}
+
+/* Button Styling */
+.btn.btn2 {
+    display: inline-block;
+    background: linear-gradient(90deg, #ff6f00, #f97917);
+    color: black;
+    padding: 12px 40px;
+    font-size: 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    border: none;
+}
+
+.btn.btn2:hover {
+    background: linear-gradient(90deg, #ff6f00, #f97917);
+    transform: translateY(-3px);
+}
+
+/* Contact Form */
+.contact-right form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+form input,
+form textarea {
+    width: 100%;
+    border: 2px solid  #ff6f00;
+    outline: none;
+    background: #1e1e1e;
+    padding: 15px;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 6px;
+    transition: all 0.3s ease-in-out;
+}
+
+form input:focus,
+form textarea:focus {
+    border-color: #ff6f00;
+    box-shadow: 0 0 10px rgba(248, 132, 0, 0.741);
+}
+
+/* Footer */
+.copyright {
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+    background: #1e1e1e;
+    font-weight: 400;
+    color: #ccc;
+    margin-top: 30px;
+}
+
+.copyright i {
     color: red;
+    animation: heartbeat 1.5s infinite;
+}
+
+/* Heartbeat Animation */
+@keyframes heartbeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
 }
 
 

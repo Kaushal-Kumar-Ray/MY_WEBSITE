@@ -1,44 +1,58 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Updates</title>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Futuristic Slider</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/x-icon" href="icon.png">
-  </head>
-  <body>
-    <div class="slidershow middle">
+</head>
+<body>
 
-      <div class="slides">
-        <input type="radio" name="r" id="r1" checked>
-        <input type="radio" name="r" id="r2">
-        <input type="radio" name="r" id="r3">
-        <input type="radio" name="r" id="r4">
-        <input type="radio" name="r" id="r5">
-        <div class="slide s1">
-          <img src="1.jpg" alt="">
+    <div class="slidershow">
+        <div class="slides">
+            <div class="slide"><img src="img1.jpg" alt="Slide 1"></div>
+            <div class="slide"><img src="img2.jpg" alt="Slide 2"></div>
+            <div class="slide"><img src="img3.jpg" alt="Slide 3"></div>
+            <div class="slide"><img src="img4.jpg" alt="Slide 4"></div>
+            <div class="slide"><img src="img5.jpg" alt="Slide 5"></div>
         </div>
-        <div class="slide">
-          <img src="2.jpg" alt="">
-        </div>
-        <div class="slide">
-          <img src="3.jpg" alt="">
-        </div>
-        <div class="slide">
-          <img src="4.jpg" alt="">
-        </div>
-        <div class="slide">
-          <img src="5.jpg" alt="">
-        </div>
-      </div>
 
-      <div class="navigation">
-        <label for="r1" class="bar"></label>
-        <label for="r2" class="bar"></label>
-        <label for="r3" class="bar"></label>
-        <label for="r4" class="bar"></label>
-        <label for="r5" class="bar"></label>
-      </div>
+        <!-- Navigation Dots -->
+        <div class="navigation">
+            <span class="bar" onclick="moveSlide(0)"></span>
+            <span class="bar" onclick="moveSlide(1)"></span>
+            <span class="bar" onclick="moveSlide(2)"></span>
+            <span class="bar" onclick="moveSlide(3)"></span>
+            <span class="bar" onclick="moveSlide(4)"></span>
+        </div>
     </div>
-  </body>
+
+    <script >
+      let currentIndex = 0;
+      const slides = document.querySelector(".slides");
+      const bars = document.querySelectorAll(".bar");
+      
+      function moveSlide(index) {
+          currentIndex = index;
+          slides.style.transform = `translateX(${-index * 100}%)`;
+          updateActiveBar();
+      }
+      
+      function updateActiveBar() {
+          bars.forEach(bar => bar.classList.remove("active"));
+          bars[currentIndex].classList.add("active");
+      }
+      
+      // ✅ FIXED Auto-slide every 5 seconds
+      setInterval(() => {
+          currentIndex = (currentIndex + 1) % bars.length;
+          moveSlide(currentIndex);
+      }, 5000);
+      
+      // Click navigation
+      bars.forEach((bar, index) => {
+          bar.addEventListener("click", () => moveSlide(index));
+      });
+      </script>
+</body>
 </html>

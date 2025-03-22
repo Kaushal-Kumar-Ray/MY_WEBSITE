@@ -20,7 +20,7 @@
                     <li><a href="#header">Home</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="Updates/updates.html">Updates</a></li>
-                    <li><a href="Music/music.html">Music</a></li>
+                   
                     <li><a href="#contact">Contact</a></li>
                     <li><a href="Gallery/Gallery.html">Personal Gallery</a></li>
                     <i class="fas fa-times" onclick="closemenu()"></i>
@@ -36,17 +36,7 @@
         </div>
     </div>
 
-    <!-- Add a smooth scroll effect -->
-    <script>
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-    </script>
+
 </body>
 </html>
 
@@ -59,11 +49,16 @@
             </div>
             <div class="about-col-2">
                 <h1 class="sub-title">About Me</h1>
-                <p>Hello, Everyone I am Kaushal Ray form Barahakshetra-6, Sunsari-Nepal. 
-                    I am currently about to complete my +2 form Vishwa Adarsha Secondary School.
-                    I want to present myself as a web developer, programmer and a designer.
-                    Hope you found this website useful. 
-
+                <p>Hi! I’m Kaushal Kumar Ray, a B.Tech CSE (AI & ML) student passionate about artificial <br>
+                    intelligence, machine learning, and web development. I love solving complex problems <br>
+                    and continuously expanding my skill set to stay ahead in the ever-evolving tech <br>
+                    landscape. Beyond coding, I have strong leadership skills, having led a team to win <br>
+                    a best presentation award. I also enjoy brewing the perfect cup of coffee, because<br> 
+                    attention to detail matters in everything I do! Driven by curiosity and innovation,<br>
+                     I’m always eager to explore, create, and collaborate. Let’s connect and build something<br>
+                      amazing together! 🚀
+                    
+                     
                 </p>
                 <div class="tab-titles">
                     <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
@@ -73,25 +68,39 @@
                 <!--Skills-->  
                 <div class="tab-contents active-tab" id="skills">
                     <ul>
-                        <li><span>Programming</span><br>C-language</li>
-                        <li><span>Web Development</span><br>Designing Web</li>
-                        <li><span>Photoshop</span><br>PNG and JPEG skills</li>
+                        <li><span>Programming:</span><br>Proficient in logical problem-solving and coding.</li>
+                         <br>
+                        <li><span>C-Language:</span><br>Strong foundation in C programming and algorithms.</li>
+                         <br>
+                        <li><span>Designing Web:</span><br>Experience in creating responsive and user-friendly web interfaces.</li>
+                        <br>
+                        <li><span>Photoshop:</span><br>Expertise in digital design and image editing.</li>
                     </ul>
                 </div>
                 <!--Interest-->
                 <div class="tab-contents" id="interest">
                     <ul>
-                        <li><span>Web Series</span><br>Like to watch webseries</li>
-                        <li><span>Web</span><br>Codding web pages</li>
-                        <li><span>Solutions</span><br>Solving mathematical problem</li>
+                        <br>
+                        <li><span>Web Development:</span><br>Skilled in HTML, CSS, JavaScript, and PHP.</li>
+                        <br>
+                        <li><span>PNG and JPEG Skills:</span><br>Proficient in optimizing and editing PNG and JPEG images.</li>
+                        <br>
+                        <li><span>Web Series:</span><br>Enjoy watching engaging web series across various genres.</li>
+                        <br>
+                        <li><span>Solutions:</span><br>Enjoy solving mathematical and logical problems efficiently.</li>
                     </ul>
                 </div>
                 <!--Hobbies-->
                 <div class="tab-contents" id="hobbies">
                     <ul>
-                        <li><span>Cyceling</span><br>Riding for long distance</li>
-                        <li><span>Songs</span><br>Like to listen indian song</li>
-                        <li><span>Movies</span><br>Both hollywood and bollywood</li>
+                        <li><span>Long-Distance Riding:</span><br>Passionate about exploring new places on two wheels.</li>
+                        <br>
+                        <li><span>Football:</span><br>Fascinated to play football with friendss.</li>
+                        <br>
+                        <li><span>Music:</span><br>Love listening to Indian melodies that resonate with emotions.</li>
+                        <br>
+                        <li><span>Movies:</span><br>A fan of both Hollywood and Bollywood, appreciating storytelling across cultures.</li>
+                        <br>
                     </ul>
                 </div>
             </div>
@@ -101,37 +110,101 @@
 
 
 <!------My skills-->
-<div id="services">
+<section id="skills">
     <div class="container">
         <h1 class="sub-title">My Skills</h1>
-        <div class="services-list">
-        <div>
-            <i class="fa-sharp fa-solid fa-code"></i>
-           <h2>Web design</h2>
-           <p>Know to basic web scripting languages Like
-            HTML, CSS, JavaScript, and PHP.
-           </p>
-             <a href="https://en.wikipedia.org/wiki/Web_design">Learn more</a>
-          </div>
-          <div>
-            <i class="fa-solid fa-paperclip"></i>
-            <h2>Programming</h2>
-            <p>Good knowledge in C-programming with basic OOP 
-                based problems and solutions.
-            </p>
-              <a href="https://en.wikipedia.org/wiki/Computer_programming">Learn more</a>
-           </div>
-           <div>
-            <i class="fa-regular fa-images"></i>
-            <h2>Adobe Photoshop</h2>
-            <p>Complete knowledge of Adove Photoshop, and some 
-                dynamic designes are made by me.
-            </p>
-              <a href="https://en.wikipedia.org/wiki/Adobe_Photoshop">Learn more</a>
-           </div>
+        <div class="skills-list">
+            <div class="skill-box">
+                <i class="fa-sharp fa-solid fa-code"></i>
+                <h2>Web Design</h2>
+                <p>Know basic web scripting languages like HTML, CSS, JavaScript, and PHP.</p>
+                <div class="progress-bar">
+                    <div class="progress" data-percent="90">
+                        <span class="progress-text">90%</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="skill-box">
+                <i class="fa-solid fa-paperclip"></i>
+                <h2>Programming</h2>
+                <p>Good knowledge in C-programming with basic OOP-based problem solving.</p>
+                <div class="progress-bar">
+                    <div class="progress" data-percent="80">
+                        <span class="progress-text">80%</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="skill-box">
+                <i class="fa-regular fa-images"></i>
+                <h2>Adobe Photoshop</h2>
+                <p>Complete knowledge of Adobe Photoshop with dynamic design experience.</p>
+                <div class="progress-bar">
+                    <div class="progress" data-percent="75">
+                        <span class="progress-text">75%</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skill-box">
+                <i class="fa-solid fa-database"></i>
+                <h2>Database Management</h2>
+                <p>Experience in MySQL, PostgreSQL, and database optimization.</p>
+                <div class="progress-bar">
+                    <div class="progress" data-percent="85">
+                        <span class="progress-text">85%</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skill-box">
+                <i class="fa-solid fa-paint-brush"></i>
+                <h2>Graphic Design</h2>
+                <p>Skilled in Adobe Illustrator, Photoshop, and vector art design.</p>
+                <div class="progress-bar">
+                    <div class="progress" data-percent="70">
+                        <span class="progress-text">70%</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skill-box">
+                <i class="fa-solid fa-terminal"></i>
+                <h2>Command Line</h2>
+                <p>Strong understanding of Linux terminal, Git, and shell scripting.</p>
+                <div class="progress-bar">
+                    <div class="progress" data-percent="90">
+                        <span class="progress-text">90%</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-</div>
+</section>
+
+<script>
+    document.querySelectorAll(".skill-box").forEach((box) => {
+        box.addEventListener("mouseenter", () => {
+            let progress = box.querySelector(".progress");
+            let percent = progress.getAttribute("data-percent");
+            progress.style.width = percent + "%";
+            progress.querySelector(".progress-text").style.opacity = "1";
+            box.querySelector("i").style.color = "#000"; // Change icon color to black on hover
+        });
+
+        box.addEventListener("mouseleave", () => {
+            let progress = box.querySelector(".progress");
+            progress.style.width = "0";
+            progress.querySelector(".progress-text").style.opacity = "0";
+            box.querySelector("i").style.color = ""; // Reset icon color
+        });
+    });
+</script>
+
+
+
+
 <!------My work------>
 <div id="gallery">
     <div class="container">
@@ -165,24 +238,37 @@
             <div class="work">
                 <img src="Images/work-4.jpg" alt="Another Project">
                 <div class="layer">
-                    <h3>Adobe Photoshop</h3>
-                    <p>A dynamic and best design of lab sheet prepared from Photoshop using different tools.</p>
-                    <a href="https://drive.google.com/drive/folders/1S094lVIqZL4iEM4kg2KMYnQriABlx4Uv?usp=sharing" class="project-link"><i class="fa-solid fa-link"></i></a>
+                    <h3>Music Player</h3>
+                    <p>A simple music player where a cetrain songs are placed which are loved the most.</p>
+                    <a href="Music/music.html" class="project-link"><i class="fa-solid fa-link"></i></a>
                 </div>
             </div>
             <div class="work">
-                <img src="Images/work-3.jpg" alt="Adobe Photoshop">
+                <img src="Images/work-5.jpg" alt="Adobe Photoshop">
                 <div class="layer">
-                    <h3>Adobe Photoshop</h3>
-                    <p>A dynamic and best design of lab sheet prepared from Photoshop using different tools.</p>
-                    <a href="https://drive.google.com/drive/folders/1S094lVIqZL4iEM4kg2KMYnQriABlx4Uv?usp=sharing" class="project-link"><i class="fa-solid fa-link"></i></a>
+                    <h3>Next-Gen AI & ML | B.Tech CSE</h3>
+                    <p>A dynamic and dream website project which fulfills all the requirement of AI & ML.</p>
+                    <a href="https://kaushal-kumar-ray.github.io/Next-Gen-AI-ML-B.Tech-CSE/" class="project-link"><i class="fa-solid fa-link"></i></a>
                 </div>
             </div>
         </div>
         <a href="https://drive.google.com/drive/folders/17YCerMM9_e2wC6brORlYzhOiI2kah0mn?usp=sharing" class="btn">See more</a>
     </div>
 </div>
+   
 
+
+<!-- Add a smooth scroll effect -->
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 
 <!------Contact------>
 
@@ -219,28 +305,6 @@
 </div>
 
 
-
-<!------Cursor animation ------>
-
-<div class="cursor"></div>
-
-
-<!------J.S------>
-<script>
-    // Get the cursor element
-    const cursor = document.querySelector('.cursor');
-
-    // Track mouse movements and update the cursor position
-    document.addEventListener('mousemove', (e) => {
-        let mouseX = e.clientX;
-        let mouseY = e.clientY;
-
-        // Update the cursor position
-        cursor.style.left = mouseX - cursor.offsetWidth / 2 + 'px';
-        cursor.style.top = mouseY - cursor.offsetHeight / 2 + 'px';
-    });
-</script>
-
 <!------Contact side menu code------>
 <script>
 var sidemenu = document.getElementById("sidemenu");
@@ -251,6 +315,30 @@ function closemenu(){
     sidemenu.style.right = "-200px";
 }</script>
 
+
+<!------About me------>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    let tabLinks = document.querySelectorAll(".tab-links");
+    let tabContents = document.querySelectorAll(".tab-contents");
+
+    tabLinks.forEach(link => {
+        link.addEventListener("click", function () {
+            let target = this.getAttribute("onclick").split("('")[1].split("')")[0];
+            
+            // Remove active classes from all tabs and links
+            tabLinks.forEach(l => l.classList.remove("active-link"));
+            tabContents.forEach(content => content.classList.remove("active-tab"));
+            
+            // Add active class to clicked tab and corresponding content
+            this.classList.add("active-link");
+            document.getElementById(target).classList.add("active-tab");
+        });
+    });
+});
+
+
+</script>
 <!------Contact Info form code------>
 <script>
     const scriptURL = 'https://script.google.com/macros/s/AKfycbwOBDXFhhiMMqqkDbqgvt3cqJ2BAxvzT9k7uV-IFut1a11x6z_NN86ommOYX0HEM9lELw/exec'
