@@ -7,8 +7,8 @@
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
-<body>
-
+<body><br><br>
+    <h1 class="typing" id="dynamic-text"></h1>
     <button class="start_quiz">Start Quiz</button>
 
     <div class="quiz-box inactive">
@@ -34,7 +34,43 @@
             <button class="exit">Exit</button>
         </div>
     </div>
+    <script>
+        // JavaScript for typing effect
+        const textElement = document.getElementById('dynamic-text');
+        const texts = ["Are you ready", "Let's go"];
+        let currentTextIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+
+        function typeEffect() {
+            const currentText = texts[currentTextIndex];
+            if (isDeleting) {
+                charIndex--;
+            } else {
+                charIndex++;
+            }
+
+            textElement.textContent = currentText.substring(0, charIndex);
+
+            if (!isDeleting && charIndex === currentText.length) {
+                // Pause before deleting
+                setTimeout(() => isDeleting = true, 1000);
+            } else if (isDeleting && charIndex === 0) {
+                // Move to the next text
+                isDeleting = false;
+                currentTextIndex = (currentTextIndex + 1) % texts.length;
+            }
+
+            const typingSpeed = isDeleting ? 50 : 100;
+            setTimeout(typeEffect, typingSpeed);
+        }
+
+        // Start the typing effect
+        typeEffect();
+    </script>
 
     <script src="script.js"></script>
+    
+    
 </body>
 </html>

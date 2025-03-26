@@ -14,13 +14,26 @@ body {
 }
 
 /* Start Button */
+.typing {
+    display: inline-block;
+    border-right: 2px solid black;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: blink 0.7s step-end infinite;
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
 .start_quiz {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: #0ff;
-    border: 2px solid #0ff;
+    background: rgb(21, 255, 0);
+    border: 2px solid rgb(255, 255, 255);
     padding: 15px 30px;
     font-size: 24px;
     border-radius: 10px;
