@@ -48,7 +48,7 @@ const questions = [
     },
     {
         question: "A linked list is preferred over an array when",
-        answer: "Dynamic resizing is required",
+        answer: "Dynamic size is required",
         options: ["Random access is needed", "Dynamic size is required", "Memory must be contiguous", "Fixed data storage is needded"]
     },
     {
